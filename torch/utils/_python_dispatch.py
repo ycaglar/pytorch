@@ -4,9 +4,10 @@ import warnings
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional, Set, Union
 
-import torch
 import torchgen
 import torchgen.model
+
+import torch
 from torch._C import (
     _get_dispatch_stack_at,
     _len_torch_dispatch_stack,
@@ -32,7 +33,7 @@ def is_in_torch_dispatch_mode() -> bool:
 class TorchDispatchMode:
     """
     A ``TorchDispatchMode`` allows you to override the meaning of all
-    ``__torch_dispatch__`` overrideable functions within a dynamic scope,
+    ``__torch_dispatch__`` overridable functions within a dynamic scope,
     without having to actually create a tensor subclass or manually
     monkey-patch functions in the PyTorch API.  Some common situations
     where you should use a mode:
